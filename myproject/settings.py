@@ -21,6 +21,7 @@ ALLOWED_HOSTS = ['project-tfq0.onrender.com', 'localhost', '127.0.0.1']
 
 
 
+
 # ----------------------------
 # Installed apps
 # ----------------------------
