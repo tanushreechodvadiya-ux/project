@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ----------------------------
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-secret-key')
 DEBUG = False  # Always False in production
-ALLOWED_HOSTS = ['project.onrender.com']
+ALLOWED_HOSTS = ['project.onrender.com', 'localhost', '127.0.0.1']
 
 
 # ----------------------------
