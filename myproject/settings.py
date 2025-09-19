@@ -37,9 +37,9 @@ INSTALLED_APPS = [
 
 # ----------------------------
 # Middleware
-# ----------------------------
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -101,7 +101,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # collectstatic will place files here
 STATICFILES_DIRS = [BASE_DIR / 'myapp' / 'static']  # extra static files from app
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # ----------------------------
 # Media files
 # ----------------------------
@@ -123,4 +123,3 @@ CSRF_TRUSTED_ORIGINS = ['https://project.onrender.com']
 # Optional: Use whitenoise to serve static files
 # ----------------------------
 MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
