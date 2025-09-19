@@ -39,7 +39,7 @@ INSTALLED_APPS = [
 # Middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # MUST be here
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -99,8 +99,8 @@ USE_TZ = True
 # Static files
 # ----------------------------
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # collectstatic will place files here
-STATICFILES_DIRS = [BASE_DIR / 'myapp' / 'static']  # extra static files from app
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # collectstatic output
+STATICFILES_DIRS = [BASE_DIR / 'myapp' / 'static']  # if you have app-level static
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # ----------------------------
 # Media files
