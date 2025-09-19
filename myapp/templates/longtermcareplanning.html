@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Investmentseasy</title>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+   {% include 'nav.html' %}
+  <!-- lifeinsurance-->
+<div class="nav1">
+  <div class="li">
+    <div class="liheading">
+        <button class="btn1">Long Term Care Planning</button>
+        <h2>Protecting Your Future with Long-Term Care Planning</h2>
+        <p>The possibility of requiring long-term care is an important consideration in your financial planning. At InvestmentsEasy, we provide comprehensive long-term care planning to ensure you're prepared for every eventuality, safeguarding your assets and peace of mind.</p>
+        <img src="static/photo/longtermcareplanning.jpg">
+    </div>
+    <div class="licontent">
+        <div class="ul1">
+            <h3>Understanding Long-Term Care Needs</h3>
+            <ul>
+              <li>
+                Estimating the potential costs of long-term care services, including in-home care, assisted living, and nursing home care.
+              </li>
+              <li>
+                Discussing the implications of long-term care on your overall financial health and family responsibilities.
+              </li>
+            </ul>
+        </div>
+        <div class="ul2">
+            <h3>Coverage Options</h3>
+            <ul>
+                <li>
+                    Explaining the features and benefits of various long-term care insurance policies.
+                <li>
+                    Assisting in selecting the right policy that aligns with your financial situation and coverage needs.
+                </li>
+            </ul>
+        </div>
+        <div class="ul3">
+        <h3>Asset Protection Strategies</h3>
+            <ul>
+                <li>
+                    Advising on financial strategies to fund long-term care without depleting retirement savings or family assets.
+                </li>
+                <li>
+                    Exploring alternative funding options such as life insurance with long-term care riders or annuities.
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+  <div class="li2">
+      <div class="li2heading">
+          <h2>Financial Planning Made Easy.<br><span class="highlight-green">Putting YOU First.</span></h2>
+      </div>
+  </div>
+  <div class="li3">
+      <div class="li31">
+          <img src="static/photo/monalipatel.png" alt="Profile" class="profile1">
+          <div class="card1-content1">
+              <h2>I am Monali Patel</h2>
+              <a href="mailto:monali@investmentseasy.com">monali@investmentseasy.com</a>
+              <p>Reach out with any questions or to set<br> up a meeting to discover the best<br> path to your financial freedom!</p>
+              <div class="icon1">
+                  <img src="static/photo/logo5.png">
+              </div>
+          </div>
+      </div>
+      <div class="hours-card1">
+        <table id="hoursTable1">
+          <tr><td class="day1">Monday</td><td class="time1">09:00 am – 09:00 pm</td></tr>
+          <tr><td class="day1">Tuesday</td><td class="time1">09:00 am – 09:00 pm</td></tr>
+          <tr><td class="day1">Wednesday</td><td class="time1">09:00 am – 09:00 pm</td></tr>
+          <tr><td class="day1">Thursday</td><td class="time1">09:00 am – 09:00 pm</td></tr>
+          <tr><td class="day1">Friday</td><td class="time1">09:00 am – 09:00 pm</td></tr>
+          <tr><td class="day1">Saturday</td><td class="time1">09:00 am – 09:00 pm</td></tr>
+          <tr><td class="day1">Sunday</td><td class="time1">09:00 am – 09:00 pm</td></tr>
+        </table>
+      </div>
+  </div>
+<div class="containercon1">
+    <!-- Left Side Image -->
+    <div class="image-side">
+        <img src="static/photo/retire.jpg" alt="retirement">
+    </div>
+
+    <!-- Right Side Form -->
+    <div class="form-side">
+      <div class="form-box">
+        <h1>Contact Us</h1>
+          <form class="conform" method="POST" action="/fetchcontact" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label>Enter Name</label>
+            <input type="text" name="cname" placeholder="Enter your name">
+
+            <label>Email Id</label>
+            <input type="email" name="email" placeholder="Enter email id here">
+
+            <label>Tell Us Your Thoughts</label>
+            <textarea name="message" placeholder="Tell us more about your financial goals and concerns."></textarea>
+
+            <label>Attach Files</label>
+            <div class="file-upload">
+                <label for="fileUpload">
+                    <img src="static/photo/contactarrow.png" alt="contactarrow">
+                </label>
+                <input type="file" id="fileUpload" name="file" accept="image/*">
+                <p>Drop a file here to upload, or click here to upload</p>
+            </div>
+
+            <p class="recaptcha-text">
+              This site is protected by reCAPTCHA and the Google
+              <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
+            </p>
+
+            <button class="submit-btn">SUBMIT</button>
+          </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Copyright © 2023 investmentseasy - All Rights Reserved.
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const today = new Date().getDay();
+    const rows = document.querySelectorAll("#hoursTable1 tr");
+
+    rows.forEach(row => {
+      const dayCell = row.querySelector(".day1");
+      if (dayCell && dayCell.textContent.trim() === days[today]) {
+        row.classList.add("highlight");
+      }
+    });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

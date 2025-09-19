@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InvestmentsEasy</title>
+    <link href="static/css/style.css" rel="stylesheet">
+</head>
+<body>
+ <header>
+    <div class="container-con-nav">
+        <a href="/"><img src="static/photo/logo.png" alt="Investmentseasy Logo" class="logo"></a>
+      <nav class="nav-links">
+        <a href="/lifeinsurance">Life Insurance</a>
+        <a href="/longtermcareplanning">longterm care</a>
+        <a href="/retiremnt">Retirement</a>
+        <a href="/estateplanning">Estate Planning</a>
+        <a href="/wealthmanagement">Wealth Management</a>
+        <a href="/collegeplanning">College Planning</a>
+      </nav>
+    </div>
+  </header>
+<script>
+    // Get current page URL
+const currentLocation = window.location.href;
+const menuItems = document.querySelectorAll("nav a");
+
+menuItems.forEach(item => {
+  if (item.href === currentLocation) {
+    item.classList.add("active");
+  }
+});
+</script>
+</body>
+</html>
